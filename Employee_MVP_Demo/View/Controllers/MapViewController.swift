@@ -15,8 +15,15 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("MapKit")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "Back"), target: self, action: #selector(backButtonTapped(_:)))
     }
     
+    @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
+        //self.dismiss(animated: true, completion: nil)
+        if let navController = self.navigationController {
+            navController.popViewController(animated: true)
+        }
+    }
     /*
     // MARK: - Navigation
 

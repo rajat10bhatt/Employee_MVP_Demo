@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol favouriteClicked {
+protocol FavouriteClicked {
     func employeeFavouriteClicked(tag: Int)
 }
 
@@ -18,18 +18,16 @@ class EmployeeTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var favouriteButton: UIButton!
     
+    var favouriteClicked:FavouriteClicked?
+    
     //MARK: Awake From nib
     override func awakeFromNib() {
         super.awakeFromNib()
-        // make image border round
-        profileImage.layer.borderWidth = 1.0
-        profileImage.layer.masksToBounds = false
-        profileImage.layer.borderColor = UIColor.white.cgColor
-        profileImage.layer.cornerRadius = profileImage.frame.size.width/2
-        profileImage.clipsToBounds = true
+        profileImage.roundCornersForAspectFit(radius: (profileImage.frame.size.width/2))
     }
     
     //MARK: Favourite Button Clicked
     @IBAction func FavouriteClicked(_ sender: UIButton) {
+        self.favouriteClicked?.employeeFavouriteClicked(tag: sender.tag)
     }
 }

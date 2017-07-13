@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6A5413C1F175A52006BAD4E /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5413B1F175A52006BAD4E /* TextFieldTableViewCell.swift */; };
+		B6A5413E1F175A66006BAD4E /* TextViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5413D1F175A66006BAD4E /* TextViewTableViewCell.swift */; };
+		B6A541401F175B98006BAD4E /* FormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5413F1F175B98006BAD4E /* FormTableViewController.swift */; };
+		B6A541421F1788D9006BAD4E /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A541411F1788D9006BAD4E /* RoundImageView.swift */; };
 		B6D598421F15E754009446BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D598411F15E754009446BA /* AppDelegate.swift */; };
 		B6D598441F15E754009446BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D598431F15E754009446BA /* ViewController.swift */; };
 		B6D598471F15E754009446BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D598451F15E754009446BA /* Main.storyboard */; };
@@ -40,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B6A5413B1F175A52006BAD4E /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		B6A5413D1F175A66006BAD4E /* TextViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewTableViewCell.swift; sourceTree = "<group>"; };
+		B6A5413F1F175B98006BAD4E /* FormTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewController.swift; sourceTree = "<group>"; };
+		B6A541411F1788D9006BAD4E /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		B6D5983E1F15E754009446BA /* Employee_MVP_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Employee_MVP_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D598411F15E754009446BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6D598431F15E754009446BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				B6D598CF1F163895009446BA /* ImageBarButtonItem.swift */,
+				B6A541411F1788D9006BAD4E /* RoundImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -296,6 +305,7 @@
 				B6D598431F15E754009446BA /* ViewController.swift */,
 				B6D598CD1F161F90009446BA /* FormViewController.swift */,
 				B6D598D11F164006009446BA /* MapViewController.swift */,
+				B6A5413F1F175B98006BAD4E /* FormTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -320,6 +330,8 @@
 			isa = PBXGroup;
 			children = (
 				B6D598CB1F161B8C009446BA /* EmployeeTableViewCell.swift */,
+				B6A5413B1F175A52006BAD4E /* TextFieldTableViewCell.swift */,
+				B6A5413D1F175A66006BAD4E /* TextViewTableViewCell.swift */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -485,12 +497,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6D598D01F163895009446BA /* ImageBarButtonItem.swift in Sources */,
+				B6A541401F175B98006BAD4E /* FormTableViewController.swift in Sources */,
+				B6A541421F1788D9006BAD4E /* RoundImageView.swift in Sources */,
 				B6D598441F15E754009446BA /* ViewController.swift in Sources */,
 				B6D598CC1F161B8C009446BA /* EmployeeTableViewCell.swift in Sources */,
+				B6A5413C1F175A52006BAD4E /* TextFieldTableViewCell.swift in Sources */,
 				B6D5984A1F15E754009446BA /* Employee_MVP_Demo.xcdatamodeld in Sources */,
 				B6D598CE1F161F90009446BA /* FormViewController.swift in Sources */,
 				B6D598421F15E754009446BA /* AppDelegate.swift in Sources */,
 				B6D598D21F164006009446BA /* MapViewController.swift in Sources */,
+				B6A5413E1F175A66006BAD4E /* TextViewTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +581,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -620,6 +638,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;

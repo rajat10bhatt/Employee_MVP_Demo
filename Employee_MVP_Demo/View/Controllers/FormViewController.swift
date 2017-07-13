@@ -33,7 +33,10 @@ class FormViewController: UIViewController {
     }
     
     @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+        //self.dismiss(animated: true, completion: nil)
+        if let navController = self.navigationController {
+            navController.popViewController(animated: true)
+        }
     }
     @IBAction func pinButtonTapped(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "toMapView", sender: nil)
