@@ -19,14 +19,9 @@ class FormViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        profileImage.layer.borderWidth = 1.0
-        profileImage.layer.masksToBounds = false
-        profileImage.layer.borderColor = UIColor.white.cgColor
-        profileImage.layer.cornerRadius = profileImage.frame.size.width/2
-        profileImage.clipsToBounds = true
+        //profileImage.roundCornersForAspectFit(radius: profileImage.frame.size.width/2)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "Back"), target: self, action: #selector(backButtonTapped(_:)))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "Pin"), target: self, action: #selector(pinButtonTapped(_:)))
-        
     }
     
     @IBAction func searchButtonTapped(_ sender: UIButton) {

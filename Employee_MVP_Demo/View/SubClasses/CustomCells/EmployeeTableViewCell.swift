@@ -9,7 +9,7 @@
 import UIKit
 
 protocol FavouriteClicked {
-    func employeeFavouriteClicked(tag: Int)
+    func employeeFavouriteClicked(tag: Int, favourite: Bool)
 }
 
 class EmployeeTableViewCell: UITableViewCell {
@@ -19,15 +19,21 @@ class EmployeeTableViewCell: UITableViewCell {
     @IBOutlet weak var favouriteButton: UIButton!
     
     var favouriteClicked:FavouriteClicked?
+    var favourite = false
     
     //MARK: Awake From nib
     override func awakeFromNib() {
         super.awakeFromNib()
-        profileImage.roundCornersForAspectFit(radius: (profileImage.frame.size.width/2))
+        //profileImage.roundCornersForAspectFit(radius: (profileImage.frame.size.width/2))
     }
     
     //MARK: Favourite Button Clicked
     @IBAction func FavouriteClicked(_ sender: UIButton) {
-        self.favouriteClicked?.employeeFavouriteClicked(tag: sender.tag)
+        if sender.imageView?.image == #imageLiteral(resourceName: "FavouriteOn") {
+            favourite = false
+        } else {
+            favourite = true
+        }
+        self.favouriteClicked?.employeeFavouriteClicked(tag: sender.tag, favourite: favourite)
     }
 }

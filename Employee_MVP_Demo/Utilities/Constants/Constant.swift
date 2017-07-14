@@ -8,6 +8,11 @@
 
 import UIKit
 
-class Constant: NSObject {
-
+struct Constants {
+    
 }
+
+//class Constant: NSObject {
+//    
+//}
+

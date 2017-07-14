@@ -12,10 +12,22 @@ import MapKit
 class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
+    
+    var latitude: Double = 0.0
+    var longitude: Double = 0.0
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("MapKit")
+        locationManager.requestWhenInUseAuthorization()
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "Back"), target: self, action: #selector(backButtonTapped(_:)))
+        let coordinate = CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude)
+        let distance: CLLocationDistance = 1000
+        self.mapView.setRegion(MKCoordinateRegionMakeWithDistance(coordinate, distance, distance), animated: true)
+        let locationPin = MyAnnotation(title: "Your Location", subtitle: "", coordinate: coordinate)
+//        let locationPin = MyAnnotation(title: searchString, subtitle: "", coordinate: location.coordinate)
+        self.mapView.addAnnotation(locationPin)
     }
     
     @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
