@@ -26,7 +26,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         print("Hello")
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "Plus"), target: self, action: #selector(addButtonTapped(_:)))
-
     }
     override func viewWillAppear(_ animated: Bool) {
         fetchEmployees()

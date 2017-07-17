@@ -8,6 +8,7 @@
 
 import UIKit
 import GooglePlaces
+import Photos
 
 class FormTableViewController: UIViewController {
 
@@ -26,14 +27,12 @@ class FormTableViewController: UIViewController {
     }
     let coredataMethods = CoreDataAccessMethods()
     var selectedEmployee: Employee?
-    let locationManager = CLLocationManager()
     var placesClient: GMSPlacesClient!
     var latitude = 0.0
     var longitude = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationManager.requestWhenInUseAuthorization()
         placesClient = GMSPlacesClient.shared()
         if let employee = selectedEmployee {
             formData[formFields.FirstName.rawValue] = employee.firstName
@@ -70,6 +69,41 @@ class FormTableViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func photoTapped(_ sender: UITapGestureRecognizer) {
+        // Get the current authorization state.
+//        let status = PHPhotoLibrary.authorizationStatus()
+//        let status1 = AVCaptureDevice.authorizationStatus(for: .video)
+//        print("--------------------", status, status1)
+//        if status1 == AVAuthorizationStatus.authorized {
+//
+//        } else if status1 == AVAuthorizationStatus.denied {
+//
+//        } else if status1 == AVAuthorizationStatus.notDetermined {
+//            AVCaptureDevice.requestAccess(for: .video, completionHandler: { (newStatus) in
+//                if (newStatus) {
+//
+//                } else {
+//
+//                }
+//            })
+//        }
+//
+//        if (status == PHAuthorizationStatus.authorized) {
+//            // Access has been granted.
+//        }else if (status == PHAuthorizationStatus.denied) {
+//            // Access has been denied.
+//        }else if (status == PHAuthorizationStatus.notDetermined) {
+//            // Access has not been determined.
+//            PHPhotoLibrary.requestAuthorization({ (newStatus) in
+//                if (newStatus == PHAuthorizationStatus.authorized) {
+//
+//                } else {
+//
+//                }
+//            })
+//        }
+//        else if (status == PHAuthorizationStatus.restricted) {
+//            // Restricted access - normally won't happen.
+//        }
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
@@ -96,6 +130,19 @@ class FormTableViewController: UIViewController {
         let destination = segue.destination as! MapViewController
         destination.latitude = self.latitude
         destination.longitude = self.longitude
+    }
+    
+    func openLocationSettingsAlert() {
+        let alertController = UIAlertController(title: NSLocalizedString("Enter your title here", comment: ""), message: NSLocalizedString("Enter your message here.", comment: ""), preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
+        let settingsAction = UIAlertAction(title: NSLocalizedString("Settings", comment: ""), style: .default) { (UIAlertAction) in
+            UIApplication.shared.open((NSURL(string: UIApplicationOpenSettingsURLString)! as URL), options: [:], completionHandler: nil)
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(settingsAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 extension FormTableViewController: UITableViewDelegate, UITableViewDataSource {
@@ -207,6 +254,7 @@ extension FormTableViewController: GMSAutocompleteViewControllerDelegate {
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
         // TODO: handle the error.
         print("Error: ", error.localizedDescription)
+        self.openLocationSettingsAlert()
     }
     
     // User canceled the operation.
