@@ -14,24 +14,16 @@ class ViewController: UIViewController {
     
     let coreDatamethods = CoreDataAccessMethods()
     var employeesData: [Employee] = []
-    enum formFields: Int {
-        case FirstName = 0
-        case LastName
-        case PhoneNo
-        case Designation
-        case Address
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Hello")
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "Plus"), target: self, action: #selector(addButtonTapped(_:)))
     }
     override func viewWillAppear(_ animated: Bool) {
         fetchEmployees()
     }
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
-        self.performSegue(withIdentifier: "toFormViewController", sender: "addNew")
+        self.performSegue(withIdentifier: Constants.formViewControllerSegue, sender: "addNew")
     }
     
      // MARK: - Navigation
@@ -61,8 +53,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return self.employeesData.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = employeeTableVIew.dequeueReusableCell(withIdentifier: "employeeCell") as! EmployeeTableViewCell
-        cell.nameLabel.text = "\(self.employeesData[indexPath.row].firstName ?? "Nofirstname") \(self.employeesData[indexPath.row].lastName ?? "No last name")"
+        let cell = employeeTableVIew.dequeueReusableCell(withIdentifier: Constants.employeeCellIdentifier) as! EmployeeTableViewCell
+        cell.nameLabel.text = "\(self.employeesData[indexPath.row].firstName ?? "") \(self.employeesData[indexPath.row].lastName ?? "")"
         cell.profileImage.image = UIImage(data: self.employeesData[indexPath.row].photo!)
         if self.employeesData[indexPath.row].isFavourite {
             cell.favouriteButton.setImage(#imageLiteral(resourceName: "FavouriteOn"), for: .normal)
@@ -75,7 +67,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "toFormViewController", sender: employeesData[indexPath.row])
+        self.performSegue(withIdentifier: Constants.formViewControllerSegue, sender: employeesData[indexPath.row])
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad {

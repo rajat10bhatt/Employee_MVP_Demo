@@ -12,13 +12,6 @@ import UIKit
 class CoreDataAccessMethods {
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     func saveEmployee(formdata: [Int:String], photo: UIImage, favourite: Bool, latitude: Double, longitude: Double) {
-        enum formFields: Int {
-            case FirstName = 0
-            case LastName
-            case PhoneNo
-            case Designation
-            case Address
-        }
         let employee = Employee(context: context) // Link Task & Context
         employee.address = formdata[formFields.Address.rawValue]
         employee.designation = formdata[formFields.Designation.rawValue]

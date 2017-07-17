@@ -28,6 +28,7 @@
 		B6F0A0611F1899B70017ABB1 /* FloatLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F0A05F1F1899B70017ABB1 /* FloatLabelTextField.swift */; };
 		B6F0A0631F18A21F0017ABB1 /* CoreDataAccessMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F0A0621F18A21F0017ABB1 /* CoreDataAccessMethods.swift */; };
 		B6F0A0691F18FEB40017ABB1 /* MyAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F0A0681F18FEB20017ABB1 /* MyAnnotation.swift */; };
+		B6FD888F1F1C988F001B33CE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD888E1F1C988F001B33CE /* Constants.swift */; };
 		CFB4772443F217168D6E11C4 /* Pods_Employee_MVP_DemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87FBB560E484F826B319727F /* Pods_Employee_MVP_DemoTests.framework */; };
 		EFC01D49B92D7AFCB0A7744E /* Pods_Employee_MVP_DemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF7BEDED5DB01A10BF9A225 /* Pods_Employee_MVP_DemoUITests.framework */; };
 /* End PBXBuildFile section */
@@ -72,7 +73,6 @@
 		B6D598601F15E755009446BA /* Employee_MVP_DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Employee_MVP_DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D598641F15E755009446BA /* Employee_MVP_DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee_MVP_DemoUITests.swift; sourceTree = "<group>"; };
 		B6D598661F15E755009446BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B6D598801F15E838009446BA /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		B6D598841F15E838009446BA /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		B6D598CB1F161B8C009446BA /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
 		B6D598CD1F161F90009446BA /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +83,7 @@
 		B6F0A05F1F1899B70017ABB1 /* FloatLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatLabelTextField.swift; path = ../../../Demo/FloatLabelFields/FloatLabelFields/FloatLabelTextField.swift; sourceTree = "<group>"; };
 		B6F0A0621F18A21F0017ABB1 /* CoreDataAccessMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataAccessMethods.swift; sourceTree = "<group>"; };
 		B6F0A0681F18FEB20017ABB1 /* MyAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyAnnotation.swift; path = ../../../../Demo/MapKitDemo/MapKitDemo/MyAnnotation.swift; sourceTree = "<group>"; };
+		B6FD888E1F1C988F001B33CE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BD15065EA909352271236AE5 /* Pods-Employee_MVP_DemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Employee_MVP_DemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Employee_MVP_DemoTests/Pods-Employee_MVP_DemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CFF7BEDED5DB01A10BF9A225 /* Pods_Employee_MVP_DemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Employee_MVP_DemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DABBFF5108BABB05F9A777FE /* Pods-Employee_MVP_DemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Employee_MVP_DemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Employee_MVP_DemoUITests/Pods-Employee_MVP_DemoUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -297,7 +298,7 @@
 		B6D5987F1F15E838009446BA /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				B6D598801F15E838009446BA /* Constant.swift */,
+				B6FD888E1F1C988F001B33CE /* Constants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -689,6 +690,7 @@
 				B6A541401F175B98006BAD4E /* FormTableViewController.swift in Sources */,
 				B6D598441F15E754009446BA /* ViewController.swift in Sources */,
 				B6D598CC1F161B8C009446BA /* EmployeeTableViewCell.swift in Sources */,
+				B6FD888F1F1C988F001B33CE /* Constants.swift in Sources */,
 				B6F0A0631F18A21F0017ABB1 /* CoreDataAccessMethods.swift in Sources */,
 				B6A5413C1F175A52006BAD4E /* TextFieldTableViewCell.swift in Sources */,
 				B6F0A0611F1899B70017ABB1 /* FloatLabelTextField.swift in Sources */,

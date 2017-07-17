@@ -18,13 +18,6 @@ class FormTableViewController: UIViewController {
     var fromAddButton = false
     var favourite = false
     var formData: [Int:String] = [:]
-    enum formFields: Int {
-        case FirstName = 0
-        case LastName
-        case PhoneNo
-        case Designation
-        case Address
-    }
     let coredataMethods = CoreDataAccessMethods()
     var selectedEmployee: Employee?
     var placesClient: GMSPlacesClient!
@@ -57,7 +50,7 @@ class FormTableViewController: UIViewController {
         }
     }
     @IBAction func pinButtonTapped(_ sender: UIBarButtonItem) {
-        self.performSegue(withIdentifier: "toMapView", sender: nil)
+        self.performSegue(withIdentifier: Constants.mapViewSegue, sender: nil)
     }
     
     @IBAction func saveTapped(_ sender: UIButton) {
