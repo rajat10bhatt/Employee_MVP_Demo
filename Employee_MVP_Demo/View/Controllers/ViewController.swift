@@ -28,12 +28,14 @@ class ViewController: UIViewController {
     
      // MARK: - Navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! FormTableViewController
-        if let _ = sender as? String {
-            destination.fromAddButton = true
-        }
-        if let employee = sender as? Employee {
-            destination.selectedEmployee = employee
+        if segue.identifier == Constants.formViewControllerSegue {
+            let destination = segue.destination as! FormTableViewController
+            if let _ = sender as? String {
+                destination.fromAddButton = true
+            }
+            if let employee = sender as? Employee {
+                destination.selectedEmployee = employee
+            }
         }
      }
     func fetchEmployees() {
